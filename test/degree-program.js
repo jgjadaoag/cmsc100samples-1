@@ -46,7 +46,8 @@ describe('Degree Program', function () {
 						done();
 					}
 					else{
-						throw new Error({'message': 'Able to retrieve a non-existent degree program'});
+					res.should.have.status(404);
+						done();
 					}
 				});
 		});
@@ -56,7 +57,7 @@ describe('Degree Program', function () {
 		INSERT should return the newly created row in JSON format.
 		OK lang kahit mali :D
 	*/
-	/*describe('insert()', function () {
+	describe('insert()', function () {
 		it('should create a new degree program record', function (done) {
 			var degreeProgram = {
 				'code': 'BSDC',
@@ -75,12 +76,14 @@ describe('Degree Program', function () {
 					done();
 				});
 		});
-	});*/
+	});
 	
 	// Test update web service
 	describe('update()', function () {
-		it('should update a specific degree program record: total_units field only', function () {
+		it('should update a specific degree program record: code, description, and total_units', function () {
 			var update = {
+				'code': 'BSCS',
+				'name': 'Comp Sci',
 				'units': 150
 			};
 			server
@@ -94,12 +97,14 @@ describe('Degree Program', function () {
 						res.should.have.status(200);
 						res.body.should.have.property('total_units',150);
 						res.body.should.have.property('degree_code','BSCS');
+						res.body.should.have.property('description', 'Comp Sci');
 						done();
 					}
 				})
 		});
 	});
 
+	/*
 	describe('remove()', function () {
 		it('should remove a specific degree program record', function (done) {
 			var deleteId = {
@@ -117,4 +122,6 @@ describe('Degree Program', function () {
 				});
 		});
 	});
+*/
 });
+
