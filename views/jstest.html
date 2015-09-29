@@ -18,17 +18,23 @@
 				document.getElementById("message").innerHTML= status;
 			}
 			function guessNumber() {
-				var x = prompt("Enter a number");
-				try {
-					if(x == "") throw "empty";
-					if(isNaN(x)) throw "not a number";
-					x = Number(x);
-					if(x < 5) throw "too low";
-					if(x > 10) throw "too high";
-				} catch(err) {
-					alert("Input is " + err);
-				} finally {
-					alert("End of try-catch statement");
+				var play = true;
+				var guess =  Math.floor(Math.random()*100 + 1);
+				while(play) {
+					var x = prompt("Enter a number");
+					try {
+						if(x == "") throw "empty";
+						if(isNaN(x)) throw "not a number";
+						x = Number(x);
+						if(x < guess) throw "too low";
+						if(x > guess) throw "too high";
+						if(x == guess) {
+							play = false;
+							throw "correct!!!";
+						}
+					} catch(err) {
+						alert("Input is " + err);
+					}
 				}
 			}
 		</script>
