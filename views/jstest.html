@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	 <head>
+	 	<title>JavaScript Test</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<p>Please input grade</p>
+		<input type="text" id="demo1" />
+		<input type="button" onclick="getStatus()" value="Get Status" />
+		<div id="message"></div>
+		<a href="javascript:void(document.body.style.backgroundColor='yellow');">Click me!<br /></a>
+		<input type="button" onclick="guessNumber()" value="Guess a number" />
+		<script>
+			function getStatus(){
+				var grade = document.getElementById("demo1").value;
+				var status = (Number(grade)>= 55)? "Pass" : "Fail";
+				document.getElementById("message").innerHTML= status;
+			}
+			function guessNumber() {
+				var x = prompt("Enter a number");
+				try {
+					if(x == "") throw "empty";
+					if(isNaN(x)) throw "not a number";
+					x = Number(x);
+					if(x < 5) throw "too low";
+					if(x > 10) throw "too high";
+				} catch(err) {
+					alert("Input is " + err);
+				} finally {
+					alert("End of try-catch statement");
+				}
+			}
+		</script>
+	</body>
+</html>
