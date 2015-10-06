@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Functions</title>
+		<meta charset="utf-8" />
+		<!--<script src="functions.js"></script>-->
+		<script src="adaoag_e7.js"></script>
+	</head>
+	<body>
+		<p>
+			<script>
+				var car1 = new car("12231", "trevita", "blue");
+				car1.startCar();
+				document.write("startCar: " + car1.speed);
+				car1.accelerate(5);
+				document.write("<br>startCar: " + car1.speed);
+				car1.accelerate(2);
+				document.write("<br>startCar: " + car1.speed);
+				car1.decelerate(2);
+				document.write("<br>startCar: " + car1.speed);
+				car1.stopCar();
+				document.write("<br>startCar: " + car1.speed);
+				car1.repaintCar("white");
+				document.write(car1);
+
+			</script>
+		</p>
+	</body>
+</html>
