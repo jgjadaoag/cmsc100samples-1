@@ -1,0 +1,48 @@
+body{
+	font-family: "Tahoma", sans-serif;
+}
+
+div.p1{
+	border: thick ridge gold;
+	position: relative;
+	width: 400px;
+	height: 100px;
+	padding: 5px;
+	background-color: black;
+	color: white;
+}
+
+#show_this{
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	border: medium dashed blue;
+	width: 250px;
+	padding: 5px;
+	background-color: white;
+	color: black;
+}
+
+.italicize{
+	font-style: italic;
+	color: red;
+}
+
+input{
+	text-align: right;
+}
+
+input.textbox,input.answer{
+	width: 50px;
+}
+
+.operator{
+	width: 12pt;
+	color: green;
+}
+
+.answer{
+	border: thick groove red;
+	background-color: #adff2f;
+	color: blue;
+}
