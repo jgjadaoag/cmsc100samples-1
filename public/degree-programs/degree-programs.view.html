@@ -1,0 +1,24 @@
+<h1>Degree Programs</h1>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<ht>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat"degreeProgram in degreePrograms">
+			<td> {{ degreeProgram.degree_code }}</td>
+			<td> {{ degreeProgram.description }}</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<fieldset>
+	<legend>Add Degree Program</legend>
+	<form ng-submit="AddDegreeProgram()">
+		<input type="text" ng-model="newDegreeProgram.code" placeholder="Code"/>
+		<input type="text" ng-model="newDegreeProgram.name" placeholder="Name"/>
+		<input type="submit" value="Add" />
+	</form>
+</fieldset>
